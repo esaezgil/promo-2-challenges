@@ -1,5 +1,5 @@
 def wagon_start
   # TODO: change this code
   #Test
-  "This hasn't started yet.."
+  "That's how it starts"
 end
