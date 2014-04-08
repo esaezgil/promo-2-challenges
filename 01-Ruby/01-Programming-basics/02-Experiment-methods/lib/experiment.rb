@@ -29,30 +29,20 @@ end
 def is_divisible_by_two(an_integer)
   # TODO: return true if an_integer is divisible by 2
   # example: is_divisible_by_two(6) => true
-  an_integer % 2 == 0
+  an_integer.even?
 end
 
 def random_subset(an_array, sample_size)
   # TODO: return a random subset of an_array with size sample_size
   # example: random_subset(('a'..'z').to_a, 4) => ["u", "q", "l", "t"]
-  subset = []
-
-  for i in 0..sample_size-1
-    jeffrey = rand(an_array.length)
-    subset << an_array[jeffrey]
-    an_array.delete_at(jeffrey)
-  end
-
-  subset
+  an_array.sample(sample_size)
 
 end
 
 def randomize(an_array)
   # TODO: return a randomized copy of an_array
   # example: randomize([1, 2, 3, 4]) => [2, 1, 4, 3]
-
   an_array.shuffle
-
 end
 
 def ascending_order(an_array)
