@@ -5,7 +5,7 @@
 def get_rid_of_surrounding_whitespaces(a_string)
   # TODO: return a copy of the string with leading and trailing whitespaces removed
   # example: get_rid_of_surrounding_whitespaces("  hey yo  ") => "hey yo"
-  a_string.lstrip!.rstrip!
+  a_string.strip
 end
 
 def belongs_to?(a_string, a_word)
@@ -51,17 +51,7 @@ def randomize(an_array)
   # TODO: return a randomized copy of an_array
   # example: randomize([1, 2, 3, 4]) => [2, 1, 4, 3]
 
-    subset = []
-    a_temporary_array = an_array
-    array_size = an_array.length
-
-  for i in 0..array_size - 1
-    jeffrey = rand(an_array.length)
-    subset << an_array[jeffrey]
-    an_array.delete_at(jeffrey)
-  end
-
-  subset
+  an_array.shuffle
 
 end
 
