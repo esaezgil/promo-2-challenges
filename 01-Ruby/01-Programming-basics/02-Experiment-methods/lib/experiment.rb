@@ -23,7 +23,7 @@ end
 def exactly_divide(an_integer, a_divider)
   # TODO: return divison of an_integer by a_divider (computing the floating division, NOT the euclidean one)
   # example: exactly_divide(13, 4) => 3.25
-  (an_integer/a_divider).to_f
+  (an_integer.to_f/a_divider.to_f)
 end
 
 def is_divisible_by_two(an_integer)
@@ -37,7 +37,7 @@ def random_subset(an_array, sample_size)
   # example: random_subset(('a'..'z').to_a, 4) => ["u", "q", "l", "t"]
   subset = []
 
-  for i in 0..sample_size
+  for i in 0..sample_size-1
     jeffrey = rand(an_array.length)
     subset << an_array[jeffrey]
     an_array.delete_at(jeffrey)
@@ -50,13 +50,15 @@ end
 def randomize(an_array)
   # TODO: return a randomized copy of an_array
   # example: randomize([1, 2, 3, 4]) => [2, 1, 4, 3]
+
     subset = []
     a_temporary_array = an_array
     array_size = an_array.length
-  for i in 0..array_size
+
+  for i in 0..array_size - 1
     jeffrey = rand(an_array.length)
-    subset << a_temporary_array[jeffrey]
-    a_temporary_array.delete_at(jeffrey)
+    subset << an_array[jeffrey]
+    an_array.delete_at(jeffrey)
   end
 
   subset
