@@ -4,6 +4,7 @@ puts "How are you today"
 user_answer = gets.chomp
 
 while coach_answer(user_answer) != ""
+  puts coach_answer(user_answer)
   puts "Any other question"
   user_answer = gets.chomp
 end
