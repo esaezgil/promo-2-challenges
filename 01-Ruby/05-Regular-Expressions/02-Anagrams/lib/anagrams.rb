@@ -1,6 +1,11 @@
+
+def word_slicer(word)
+  word.downcase.chars.sort.join.slice(/\w+/)
+end
+
 def anagrams?(a_string, another_string)
   #TODO: implement the obvious method to test if two words are anagram
-  if a_string.downcase.chars.sort.join.slice(/\w+/).match(/(#{another_string.downcase.chars.sort.join.slice(/\w+/)})/i) != nil
+  if word_slicer(a_string).match(/(#{word_slicer(another_string)})/i) != nil
     true
   else
     false
