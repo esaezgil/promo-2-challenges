@@ -1,4 +1,3 @@
-
 def word_slicer(word)
   word.downcase.chars.sort.join.slice(/\w+/)
 end
