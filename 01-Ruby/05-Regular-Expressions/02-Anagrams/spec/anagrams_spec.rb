@@ -1,12 +1,11 @@
 # Encoding: utf-8
 require "spec_helper"
 require "anagrams"
-require "pry"
+
 
 describe "#anagrams?" do
 
   it "should return true if words are anagrams" do
-    #binding.pry
     anagrams?("Monica Lewinsky!", "Nice silky woman").must_equal true
   end
 

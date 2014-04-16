@@ -1,3 +1,4 @@
+# require 'pry'
 #def group_anagrams(words)
   #TODO: group anagrams
  # subwords = words
@@ -9,7 +10,7 @@
 def group_anagrams(words)
   hashwords = {}
 
-  words.each {|word| hashwords[word] = word.chars.sort.join}
+  words.each {|word| hashwords[word] = word.downcase.chars.sort.join}
   subwords = words.sort.group_by {|word| hashwords[word]}.values
 
   subwords

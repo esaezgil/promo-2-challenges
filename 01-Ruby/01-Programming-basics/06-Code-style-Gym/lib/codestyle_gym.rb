@@ -27,7 +27,7 @@ def status_Player
     :win
   elsif(@position<0)
     :loose
-  else;
+  else
     :play
   end
 end

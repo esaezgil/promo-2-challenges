@@ -25,7 +25,7 @@ class SuperHero
   end
 end
 
-superman = SuperHero.new("Clark", "Kent", "Superman", ["Flying", "Super Force", "Super Fast", "Red briefs"])
-p superman
-p superman.changing_in_a_photo_booth
-p superman.banging_lois_lane
+# superman = SuperHero.new("Clark", "Kent", "Superman", ["Flying", "Super Force", "Super Fast", "Red briefs"])
+# p superman
+# p superman.changing_in_a_photo_booth
+# p superman.banging_lois_lane

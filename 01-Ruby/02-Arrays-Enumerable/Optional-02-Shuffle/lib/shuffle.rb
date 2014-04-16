@@ -1,7 +1,6 @@
 def shuffle(array)
   #TODO: shuffle array manually
     subset = []
-    a_temporary_array = array
     array_size = array.length
 
   for i in 0..array_size - 1

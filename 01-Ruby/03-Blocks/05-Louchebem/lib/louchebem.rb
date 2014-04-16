@@ -36,4 +36,4 @@ def ponctuation(word)
     boucher(word)
   end
 end
-puts louchebemize('Le chat, va a la plage se baigner')
+puts louchebemize('Le chat se baigne a la plage!')

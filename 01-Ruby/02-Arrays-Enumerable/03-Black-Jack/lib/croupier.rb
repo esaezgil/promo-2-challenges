@@ -13,8 +13,7 @@ def play_game
       score += pick_card
       puts state_of_the_game(score, bank)
     end
-
-  end while doweplay
+  end until !doweplay || score >= 21 || score > bank
 
   puts build_message_for(game_outcome(bank, score))
 end
@@ -27,8 +26,10 @@ end
 def asking_for_card?(score)
   # TODO: Ask for a card only if the score is less or equal to 21, then returns true or false according to the user's choice
   puts "Card ? (type 'Y' or 'yes' for a new card)" if score <= 21
+
   card = gets
   card.chomp! if card
+
   true if card.upcase == 'Y' || card.downcase == 'yes'
 end
 

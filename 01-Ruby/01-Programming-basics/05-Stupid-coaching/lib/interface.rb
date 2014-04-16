@@ -3,9 +3,9 @@ require_relative "coach_answer"
 puts "How are you today"
 user_answer = gets.chomp
 
-while coach_answer(user_answer) != ""
-  puts coach_answer(user_answer)
-  puts "Any other question"
+until coach_answer_enhanced(user_answer) == ""
+  puts coach_answer_enhanced(user_answer)
+  puts "Anything else?"
   user_answer = gets.chomp
 end
 

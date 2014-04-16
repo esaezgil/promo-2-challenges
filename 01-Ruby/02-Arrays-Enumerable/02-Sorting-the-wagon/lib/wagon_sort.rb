@@ -10,8 +10,8 @@ end
 
 def print_students_info(students)
   unless students == [""]
+    laststudent = students.delete_at(students.length - 1)
     puts "Congratulations! Your wagon has #{students.length} students:"
-    puts "#{students[0]}, #{students[1]} and #{students[2]}"
+    puts "#{students * ', ' } and #{laststudent}"
   end
 end
-

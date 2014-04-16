@@ -18,11 +18,16 @@ def coach_answer_enhanced(your_message)
     "Silly question, get dressed and go to work !"
 
   elsif your_message == "I am going to work right now SIR !"
-      ""
+    ""
+
   elsif your_message.upcase == your_message
-        "I can feel your motivation son !"
+    "I can feel your motivation son !"
+
+  elsif your_message.include? "girl"
+    "Is she hot?"
   else
     "I don't care son, get dressed and go to work !"
+
   end
 
 end
