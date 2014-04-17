@@ -1,4 +1,3 @@
-require 'pry'
 class OrangeTree
   # TODO: Implement all the specs defined in the README.md :)
   attr_reader :height, :dead, :fruits, :age, :found_dead
