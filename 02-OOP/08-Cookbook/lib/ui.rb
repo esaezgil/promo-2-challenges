@@ -14,27 +14,34 @@ class UI
   def list
     # TODO: call the appropriate controller method with the proper argument(s)
     # TODO: format and display the retrieved data in a numbered list
+    controller.list
   end
 
   def add
     # TODO: ask the user a recipe name
     # TODO: call the appropriate controller method with the proper argument(s)
+    p "What recipe do you want to delete?"
+    controller.add(user_input)
   end
 
   def del
     # TODO: ask the user a recipe index
     # TODO: call the appropriate controller method with the proper argument(s)
+    p "What recipe do you want to add?"
+    controller.delete(user_input)
   end
 
   def exit
     # TODO: exit the program
     # Hint: Take a look at the display method !
+    @running = false
   end
 
   def user_input
     # TODO: Get the user input and return it
     # [OPTIONAL] You can think of the case where the user
     # enters a wrong choice.
+    user_answer = gets.chomp
   end
 
   def display
