@@ -3,7 +3,8 @@ class UI
     list: "- List all recipes [list]",
     add:  "- Add a new recipe [add]",
     del:  "- Delete a recipe [del]",
-    exit: "- Exit [exit]"
+    exit: "- Exit [exit]",
+    import: "Import recipes from Marmiton"
   }
 
   def initialize(controller)
@@ -27,7 +28,7 @@ class UI
   def del
     # TODO: ask the user a recipe index
     # TODO: call the appropriate controller method with the proper argument(s)
-    p "What recipe do you want to add?"
+    p "What recipe do you want to delete?"
     controller.delete(user_input)
   end
 
@@ -42,6 +43,11 @@ class UI
     # [OPTIONAL] You can think of the case where the user
     # enters a wrong choice.
     user_answer = gets.chomp
+  end
+
+  def import_marmiton
+    p "What kind of recipe do you want to add?"
+    controller.import(user_input)
   end
 
   def display

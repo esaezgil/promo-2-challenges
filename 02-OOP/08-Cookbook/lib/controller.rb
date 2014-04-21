@@ -11,6 +11,10 @@ class Controller
     cookbook.retrieve_all
   end
 
+  def import
+    cookbook.import(user_input)
+  end
+
   def add(recipe)
     cookbook.create(recipe)
   end
