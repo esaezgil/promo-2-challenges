@@ -1,14 +1,10 @@
-require_relative "crud"
+require_relative 'config/application'
+require_relative 'models/post'
 
 def ask_and_get(param)
-  puts "What is the #{param} for your post?"
+  puts "What is the #{param} of your piece of news?"
   gets.chomp
 end
-
-db_path = "db/news.sqlite"
-db = SQLite3::Database.new(db_path)
-
-create_scheme(db) 
 
 while true
 
@@ -18,7 +14,6 @@ while true
   puts "3. Delete all posts"
   puts "4. Exit"
   
-  # TODO: add other CRUD tasks if you wish!
 	choice =  gets.chomp.to_i
 	
 	case choice
@@ -27,11 +22,11 @@ while true
     source_url = ask_and_get("source url")
     rating = ask_and_get("rating")
     post = { name: name, source_url: source_url, date: Time.now, rating: rating }
-    create_post(db, post)
+    #TODO: use ActiveRecord to add a new entry to the DB
   when 2
-    get_posts(db)
+    #TODO: use ActiveRecord to get all entries from the DB
   when 3
-    delete_posts(db)
+    #TODO: use ActiveRecord to delete all entries from the DB
   when 4 
     break
 	end 
