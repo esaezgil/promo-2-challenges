@@ -15,21 +15,21 @@ class UI
   def list
     # TODO: call the appropriate controller method with the proper argument(s)
     # TODO: format and display the retrieved data in a numbered list
-    controller.list
+    @controller.list
   end
 
   def add
     # TODO: ask the user a recipe name
     # TODO: call the appropriate controller method with the proper argument(s)
     p "What recipe do you want to delete?"
-    controller.add(user_input)
+    @controller.add(user_input)
   end
 
   def del
     # TODO: ask the user a recipe index
     # TODO: call the appropriate controller method with the proper argument(s)
     p "What recipe do you want to delete?"
-    controller.delete(user_input)
+    @controller.delete(user_input)
   end
 
   def exit
@@ -42,12 +42,12 @@ class UI
     # TODO: Get the user input and return it
     # [OPTIONAL] You can think of the case where the user
     # enters a wrong choice.
-    user_answer = gets.chomp
+    @user_answer = gets.chomp
   end
 
   def import_marmiton
     p "What kind of recipe do you want to add?"
-    controller.import(user_input)
+    @controller.import(user_input)
   end
 
   def display

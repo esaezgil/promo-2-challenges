@@ -3,6 +3,7 @@ require_relative 'parser_nokogiri'
 require 'nokogiri'
 require 'open-uri'
 require 'pry'
+require_relative 'recipe'
 
 class Cookbook
 
@@ -40,14 +41,17 @@ class Cookbook
   end
 
   def save
-    CSV.open(@file, "wb") do |csv|
+    CSV.open(@file, "wb",
+    :write_headers=> true,
+    :headers => ["name","rating","cook time", "prep time"]) do |csv|
       @recipes.each {|recipe| csv << [recipe.name, recipe.rating, recipe.cook_time, recipe.preparation_time]}
     end
   end
 
   def csv_to_array(file_name)
     array = []
-    CSV.foreach(file_name) do |row|
+    CSV.foreach(file_name,
+    :headers=> true) do |row|
       array << Recipe.new(row[0], row[1].to_i, row[2].to_i, row[3].to_i)
     end
     array
@@ -58,14 +62,17 @@ class Cookbook
   doc = Nokogiri::HTML(open("http://www.marmiton.org/recettes/recherche.aspx?aqt=#{input}"))
 
   doc.search('.m_search_result').each do |element|
-    array << Recipe.new(element.search('.m_search_titre_recette > a').inner_text, element.search('.etoile1').size/5, element.search('.m_search_result_part4').inner_text.strip.match(/Cuisson[\s+|:]+\d+[ min]/).to_s.match(/\d+/)[0].to_i , element.search('.m_search_result_part4').inner_text.strip.match(/Préparation[\s+|:]+\d+[ min]/).to_s.match(/\d+/)[0].to_i)
+    array << Recipe.new(element.search('.m_search_titre_recette > a').inner_text,
+      element.search('.etoile1').size/5,
+      element.search('.m_search_result_part4').inner_text.strip.match(/Cuisson[\s+|:]+\d+[ min]/).to_s.match(/\d+/).to_i ,
+      element.search('.m_search_result_part4').inner_text.strip.match(/Préparation[\s+|:]+\d+[ min]/).to_s.match(/\d+/).to_i)
       end
     array
   end
 
 end
 
-pp =  Cookbook.new("recipes.csv")
+pp =  Cookbook.new("./lib/recipes.csv")
 pp.import("pomme")
 puts pp
 # puts pp.recipe
