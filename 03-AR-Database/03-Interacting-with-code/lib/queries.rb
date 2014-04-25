@@ -16,7 +16,7 @@ end
 
 def love_tracks(db)
   #TODO: return array of love songs
-  love = db.execute "SELECT Name FROM Track WHERE Name like '% love %' "
+  love = db.execute "SELECT Name FROM Track WHERE Name like '%love%' "
 end
 
 def long_tracks(db, min_length)
