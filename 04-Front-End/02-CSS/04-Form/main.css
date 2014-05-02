@@ -1,6 +1,62 @@
 .container {
-  margin: 0 auto;  
+  margin: 0 auto;
   width: 840px;
 }
+body {
+  background-image:url("http://i.imgur.com/WmHZNxR.jpg");
+  width: 100&;
+}
+header {
+  background-color: rgba(255,255,255,0.70);
+  text-align: center;
+  width:100%;
+}
+h2 {
+  margin:0.2em;
+}
+.navbar_fixed {
+  position:fixed;
+  font-size: 2em;
+  }
+/*Add some CSS rules to design your form */
+.container {
+  display:inline-block;
+  margin-top: 10%;
+  margin-left:25%;
+  width:50%;
+  height: 70%;
+  background-color:rgba(255,255,255,0.8);
+  border-radius:6px;
+  padding: 1em;
+}
+.color_forms {
+  border-radius: 4px;
+  background-color:white;
+  margin: 0.2em;
+  border: solid white 2px;
+  input:focus:-moz-placeholder { color:transparent; } /* Firefox 18- */
+  input:focus::-moz-placeholder { color:transparent; } /* Firefox 19+ */
+  input:focus:-ms-input-placeholder { color:transparent; } /* oldIE ;) */
+  input:focus::-webkit-input-placeholder { color:transparent; }
 
-/*Add some CSS rules to design your form */ 
+}
+.fancy_forms {
+  display:block;
+}
+.container a{
+  display:block;
+}
+.marketing_form {
+  border-bottom:solid rgb(252, 131, 38) 1px;
+  margin: 0.5em;
+}
+.center_button{
+  margin-left:40%;
+  background-color: blue;
+  border: solid blue 1px;
+  color:white;
+  border-radius: 4px;
+}
+.inline_forms{
+  display:inline-block;
+}

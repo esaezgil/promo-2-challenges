@@ -1,0 +1,30 @@
+.wrapper{
+  margin-top: -20px;
+}
+
+#sign-in {
+position: absolute;
+left: 200px;
+top: 30%;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 80px;
+  background-color: black;
+  color:white;
+  padding-top: 10px;
+}
+
+.login_sizing {
+
+  width: 500px;
+  margin: 100px auto 150px auto;
+  border: 1px solid #eee;
+  padding: 40px 30px;
+  margin:auto;
+  margin-top:60px;
+}

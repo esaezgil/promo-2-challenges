@@ -5,16 +5,47 @@
   <title>Blog</title>
   <!--Normalize CSS-->
   <link href="normalize.css" rel="stylesheet" type='text/css'>
-  
+
   <!--Your CSS-->
   <link href="main.css" rel="stylesheet" type='text/css'>
-  
+
 </head>
 <body>
+  <header class="navbar_fixed">
+    <h1>Red Panda Events</h1>
+  </header>
+
   <div class="container">
-    
+    <div class="marketing_form">
+      <h2>Personal informations</h2>
+    </div>
+    <div>
+      <div class="name_surname">
+        <input type="text" name="surname" class="color_forms inline_forms" placeholder="Mac">
+        <input type="text" name="name" class="color_forms inline_forms"  placeholder="Gyver">
+      </div>
+      <div class="block_forms">
+        <input type="text" name="email" class="color_forms fancy_forms"  placeholder="Mac@Gyver.mullet">
+        <input type="email" name="password" class="color_forms fancy_forms"  placeholder="password*****">
+      </div>
+    </div>
+    <div class="marketing_form">
+      <h2>What is your event about?</h2>
+    </div>
+    <div>
+      <textarea name="event" cols="40" rows="3">Tell your event</textarea>
+      <a>How many people will attend?
+          <select name="nb_people" class="color_forms inline_forms">
+              <option value="value1">~100</option>
+              <option value="value2" selected>100 to 500</option>
+              <option value="value3">More than 500</option>
+          </select>
+      </a>
+      <button name="button" class="center_button">Submit</button>
+    </div>
+
     <!--YOUR FORM HERE-->
-    
+
   </div>
 </body>
 </html>

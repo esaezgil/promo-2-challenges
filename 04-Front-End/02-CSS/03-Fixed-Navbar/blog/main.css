@@ -4,30 +4,31 @@
 
 header{
   width:100%;
-  padding-left:25%;
 }
 
 .content{
   margin-left:25%;
   margin-right:25%;
-  padding-top: 6em;
+  padding-top:5em;
 
 }
 .nav-content{
-  padding: 2em;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  margin-left: 25%;
 }
 
 h1{
   display:inline;
 }
 
-nav{
-  padding-left: 2em;
+nav {
+  padding-left: 6em;
   display: inline;
 }
 
 nav a {
-  padding-left: 2em;
+  padding-left: 4em;
   color:white;
 }
 
