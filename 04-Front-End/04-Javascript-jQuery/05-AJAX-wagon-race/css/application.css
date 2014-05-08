@@ -1,0 +1,99 @@
+tr {
+  border-top: red solid 2px;
+  border-bottom: red solid 2px;
+}
+
+h1 {
+text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+td {
+  float:left;
+  height: 50px;
+  width: 90px;
+}
+
+td.finish_line {
+  float:left;
+  border-left: black solid 2px;
+  height: 50px;
+  width: 90px;
+}
+.racer_table td {
+  background-color: white;
+}
+
+.racer_table #player1_race td.active {
+  background-image: url("../img/player_1.png");
+  background-size: 100%;
+}
+
+.racer_table #player2_race td.active {
+  background-image: url("../img/player_2.png");
+  background-size: 100%;
+}
+
+.wrapper{
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  }
+
+.hulkHogan {
+  background-image: url("http://media.giphy.com/media/GjgHjWLzHzIm4/giphy.gif");
+}
+
+.message_wrapper {
+  background: white;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 150px;
+  text-align:center;
+}
+
+.restartButton {
+  background: blue;
+  border-radius: 2px;
+  width: 120px;
+  border: 0px;
+  color:white;
+  margin: 10px;
+}
+
+.prelaunch_backboard {
+  position: absolute;
+  background: white;
+  top:0;
+  bottom:0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  text-align: center;
+}
+.startButton {
+  background: red;
+  border-radius: 2px;
+  width: 120px;
+  border: 0px;
+  color:white;
+  margin: 10px;
+}
+.race_wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.player_form div{
+  width:100%;
+  margin-top: 10px;
+}
+
+label {
+  margin-right: 10px;
+}
