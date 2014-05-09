@@ -6,20 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Minesweeper</title>
   <link rel="stylesheet" href="minesweeper.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 </head>
 <body>
-  <table id="minesweeper">
-    <!-- Dear Student, would you write a bunch of HTML here or generate
-         a big array of tiles, or do it via JavaScript? -->
-    <tr>
-      <td class="unopened"></td>
-      <td class="unopened"></td>
-    </tr>
-    <tr>
-      <td class="unopened"></td>
-      <td class="unopened"></td>
-    </tr>
-  </table>
+  <div class="game-wrapper">
+    <h1><span class="glyphicon glyphicon-heart red"></span>An Aviato® mindsweeper<span class="glyphicon glyphicon-heart red"></span></h1>
+    <div class="pregame-wrapper">
+      <form class="center">
+
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="option_easy" value="easy" checked>
+            Play the easier level: 81 cells, 10 mines
+          </label>
+        </div>
+
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="option_medium" value="medium">
+            Play the medium level: 121 cells, 25 mines
+          </label>
+        </div>
+
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="option_hard" value="hard">
+            Play the medium level: 196 cells, 70 mines
+          </label>
+        </div>
+        <button type="button" class="btn btn-primary">Start</button>
+
+      </form>
+    </div>
+  </div>
 
   <!-- Including jQuery from the Google CDN -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
