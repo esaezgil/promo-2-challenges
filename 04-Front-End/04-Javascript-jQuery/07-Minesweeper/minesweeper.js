@@ -1,17 +1,33 @@
 // Good luck!
-function constructTable(id, rows, columns, mines) {
+function constructTable(id, choice) {
+
+  if (choice == "easy") {
+      ROWS = COLUMNS = 9
+      MINES = 20
+    }
+    else if (choice == "medium") {
+      ROWS = COLUMNS = 11
+      MINES = 40
+    }
+
+    else if (choice == "hard") {
+      ROWS = COLUMNS = 16
+      MINES = 70
+    }
+
     $('.game-wrapper').append('<table id='+id+'>');
   var $table = $('#'+id);
-  for (i = 0; i < rows; i++) {
+  for (i = 0; i < ROWS; i++) {
     $table.append('<tr>')
   }
 
   $('tr').each( function() {
-    for (i=0; i < columns; i++){
+    for (i=0; i < COLUMNS; i++){
      $('<td>').appendTo($(this)).addClass('unopened');
     }
   })
-  mineIt(mines);
+  mineIt(MINES);
+  $('.pregame-wrapper').fadeOut(1000, function (){$('.pregame-wrapper').remove();});
 };
 
 function mineIt(mines) {
@@ -82,46 +98,7 @@ function lookDeeper(cell_row, cell_column, className, addCallback) {
   if (mine == 0 )  $('tr:eq('+cell_row+') td:eq('+cell_column+')').addClass('opened');
 }
 
-function lookEvenDeeper(cell_row, cell_column, className, addCallback) {
-  var checks = cellToCheck(id);
-  for (var j=0; j < checks.length; j++) {
-      if (checks[j]>0 && $('#'+checks[j]).hasClass(className)) {
-        addCallback(checks[j]);
-    }
-  }
-}
-
-$(document).ready(function(){
-
-
-  $('button').click(function() {
-
-    $('td').bind('contextmenu', function(){
-
-    // Handle right-click event.
-      return false;
-     });
-
-    var $selected = $('input[name="optionsRadios"]:checked', 'form');
-    var choice = $selected.val();
-
-    if (choice == "easy") {
-      ROWS = COLUMNS = 9
-      MINES = 20
-    }
-    else if (choice == "medium") {
-      ROWS = COLUMNS = 11
-      MINES = 40
-    }
-
-    else if (choice == "hard") {
-      ROWS = COLUMNS = 16
-      MINES = 70
-    }
-
-    constructTable('minesweeper', ROWS, COLUMNS, MINES);
-    $('.pregame-wrapper').fadeOut(1000, function (){$('.pregame-wrapper').remove();});
-
+function findMine() {
 
   $('td').each(function(){
 
@@ -135,7 +112,9 @@ $(document).ready(function(){
     //Add "mine-neighbour class"
     if (!$(this).hasClass('mine')) lookDeeper(cell_row, cell_column, 'mine', oneMoreMine);
   });
+}
 
+function openTile() {
   $('td').click(function() {
 
     var cell = $(this).closest('td');
@@ -159,10 +138,14 @@ $(document).ready(function(){
       lookDeeper(cell_row, cell_column, 'unopened', checkNeighbour);
     }
   })
+}
+
+function addFlag() {
+
   $( "td" ).mousedown(function(event) {
-    event.preventDefault();
+
     if (event.which ==3) {
-      if(!$(this).hasClass('unopened, opened')){
+      if(!$(this).hasClass('unopened, opened') && !$(this).hasClass('flagged')){
         $(this).addClass('flagged').removeClass('unopened')
       }
       else if ($(this).hasClass('flagged')) {
@@ -170,5 +153,31 @@ $(document).ready(function(){
       }
     }
   });
+}
+
+$(document).ready(function(){
+
+
+  $('button').click(function() {
+
+
+    var $selected = $('input[name="optionsRadios"]:checked', 'form');
+    var choice = $selected.val();
+
+    constructTable('minesweeper', choice);
+
+    $('table').bind('contextmenu', function(){
+
+    // Handle right-click event.
+      return false;
+     });
+    //Add numbers of mines around tiles
+    findMine()
+
+    //openTile
+    openTile()
+
+    //addFlag to tiles
+    addFlag()
  })
 });

@@ -17,7 +17,7 @@ $(document).ready(function(){
 
   $('input, textarea').focusout( function() {
         if (($(this).val() == '')) {
-          $(this).parents('.form-group').addClass('has-error');
+          $(this).parents('.form-group').removeClass('has-success').addClass('has-error');
         }
         else {
           $(this).parents('.form-group').removeClass('has-error').addClass('has-success');}
