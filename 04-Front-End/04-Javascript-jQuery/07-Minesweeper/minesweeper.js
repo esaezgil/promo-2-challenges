@@ -171,6 +171,7 @@ $(document).ready(function(){
     // Handle right-click event.
       return false;
      });
+
     //Add numbers of mines around tiles
     findMine()
 
