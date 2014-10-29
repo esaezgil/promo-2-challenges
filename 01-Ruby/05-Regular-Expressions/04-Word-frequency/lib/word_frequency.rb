@@ -21,7 +21,7 @@ def most_common_words(file_name, stop_words_file_name, number_of_word)
   array_file.each do |x,y|
     hash_file[x] = y
   end
-
+p hash_file
 hash_file
 
 end
